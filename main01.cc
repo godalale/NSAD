@@ -1,8 +1,4 @@
 #include "Pythia8/Pythia.h"
-#include "TFile.h"
-#include "TH1D.h"
-#include <iostream>
-#include <string>
 
 using namespace Pythia8;
 
