@@ -1,1 +1,1 @@
-Výsledné histogramy sú v štyroch .pdf súboroch.
+Výsledné histogramy sú v štyroch .pdf súboroch. Proces je možné zopakovať spustením skriptu runconf.sh, ktorý spustí Pythiu a vygeneruje 4 .root súbory, ktoré následne možno analyzovať pomocou compare.sh
