@@ -7,11 +7,13 @@
 using namespace Pythia8;
 
 // Function to generate events and fill histograms
-void generateEvents(const std::string& configFile, const std::string& outputFile, int numEvents = 10000) {
+void generateEvents(const std::string& configFile, const std::string& outputFile) {
     // Initialize Pythia with a configuration file
     Pythia pythia;
     pythia.readFile(configFile);
     pythia.init();
+
+    int numEvents = pythia.mode("Main:numberOfEvents");
 
     // Create ROOT file and histograms
     TFile *rootFile = new TFile(outputFile.c_str(), "RECREATE");
