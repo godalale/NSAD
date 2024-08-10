@@ -23,7 +23,6 @@ void generateEvents(const std::string& configFile, const std::string& outputFile
     // Event loop
     for (int i = 0; i < numEvents; ++i) {
         if (!pythia.next()) continue;
-
         for (int j = 0; j < pythia.event.size(); ++j) {
             if (pythia.event[j].id() == 25) {  // Higgs boson
                 h_pt->Fill(pythia.event[j].pT());
