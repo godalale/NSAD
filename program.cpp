@@ -11,6 +11,7 @@ void generateEvents(const std::string& configFile, const std::string& outputFile
     // Initialize Pythia with a configuration file
     Pythia pythia;
     pythia.readFile(configFile);
+    pythia.readString("Beams:idA = 2212");
     pythia.init();
 
     int numEvents = pythia.mode("Main:numberOfEvents");
@@ -24,7 +25,7 @@ void generateEvents(const std::string& configFile, const std::string& outputFile
     for (int i = 0; i < numEvents; ++i) {
         if (!pythia.next()) continue;
         for (int j = 0; j < pythia.event.size(); ++j) {
-            if (pythia.event[j].id() == 25) {  // Higgs boson
+            if (pythia.event[j].id() == 25 && pythia.event[j].daughterList().empty()) {  // Higgs boson
                 h_pt->Fill(pythia.event[j].pT());
                 h_y->Fill(pythia.event[j].y());
             }

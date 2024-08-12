@@ -1,3 +1,5 @@
+echo "Compiling program"
+g++ -o program program.cpp `root-config --cflags --libs` -I/Users/alexandergodal/pythia8312/include -L/Users/alexandergodal/pythia8312/lib -lpythia8
 echo "Running config00"
 ./program config00.conf config00.root > config00.out
 echo "Running config01"
