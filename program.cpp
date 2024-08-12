@@ -24,10 +24,13 @@ void generateEvents(const std::string& configFile, const std::string& outputFile
     // Event loop
     for (int i = 0; i < numEvents; ++i) {
         if (!pythia.next()) continue;
-        for (int j = 0; j < pythia.event.size(); ++j) {
-            if (pythia.event[j].id() == 25 && pythia.event[j].daughterList().empty()) {  // Higgs boson
+
+        // Loop through the event record in reverse order
+        for (int j = pythia.event.size() - 1; j >= 0; --j) {
+            if (pythia.event[j].id() == 25) {  // Higgs boson
                 h_pt->Fill(pythia.event[j].pT());
                 h_y->Fill(pythia.event[j].y());
+                break;  // Exit the loop after the first (last in record) Higgs is found
             }
         }
     }
