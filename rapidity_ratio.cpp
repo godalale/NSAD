@@ -34,6 +34,10 @@ void comparison() {
     h_ratio3->Rebin(4);
     h_ratio4->Rebin(4);
 
+    h_ratio2->Scale(0.25);
+    h_ratio3->Scale(0.25);
+    h_ratio4->Scale(0.25);
+
     h_ratio2->SetStats(0);
     h_ratio3->SetStats(0);
     h_ratio4->SetStats(0);
