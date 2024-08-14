@@ -1,1 +1,1 @@
-Výsledné histogramy sú v štyroch .pdf súboroch.
+Výsledné histogramy sú v piatich .pdf súboroch.
